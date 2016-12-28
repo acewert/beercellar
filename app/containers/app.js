@@ -13,10 +13,9 @@ import {
     WELCOME_TITLE
 } from '../constants';
 
-import {
-    WelcomeScene,
-    Dashboard
-} from '../containers';
+import WelcomeScene from './welcome';
+import Dashboard from './dashboard';
+import MyCellar from './MyCellar';
 
 const ReduxRouter = connect()(Router);
 
@@ -28,7 +27,7 @@ export default class App extends Component {
             <Scene key="root">
                 <Scene key="WelcomeScene" component={WelcomeScene} title={WELCOME_TITLE} initial={true} />
                 <Scene key="Dashboard" component={Dashboard} title={DASHBOARD_TITLE} />
-                <Scene key="MyCellar" component="MyCellar" title={MY_CELLAR_TITLE} />
+                <Scene key="MyCellar" component={MyCellar} title={MY_CELLAR_TITLE} />
             </Scene>
         </ReduxRouter>
       </Provider>
