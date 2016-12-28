@@ -8,9 +8,7 @@ import {
     Text
 } from 'react-native';
 
-import {
-        HANDLE_LOGIN
-} from '../actions';
+import { Actions } from 'react-native-router-flux';
 
 import styles from '../styles';
 
@@ -44,13 +42,21 @@ export const mapStateToProps = (state, props) => {
 export const mapDispatchToProps = (dispatch, props) => {
     return {
         login: () => {
+            const user = {
+                avatar: {
+                    large: "https://placekitten.com/640/640",
+                    medium: "https://placekitten.com/320/320",
+                    small: "https://placekitten.com/64/64"
+                },
+                displayName: "Stanley Parable",
+                email: "stanley@valve.com",
+                id: "1"
+            };
             dispatch({
-                type: HANDLE_LOGIN,
-                payload: {
-                    isLoggedIn: true,
-                    displayName: 'Brandon'
-                }
+                type: 'RECEIVE_PROFILE',
+                payload: user
             });
+            Actions.Dashboard();
         }
     };
 };

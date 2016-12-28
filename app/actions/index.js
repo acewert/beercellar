@@ -2,10 +2,10 @@ import {
     createActions
 } from 'redux-actions';
 
-export const HANDLE_LOGIN = 'HANDLE_LOGIN';
+export const RECEIVE_PROFILE = 'RECEIVE_PROFILE';
 
 export const {
-    handleLogin
+    receiveProfile
 } = createActions(
-    HANDLE_LOGIN
+    RECEIVE_PROFILE
 );

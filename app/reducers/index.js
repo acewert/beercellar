@@ -1,12 +1,12 @@
 import { handleActions } from 'redux-actions';
 import {
-    HANDLE_LOGIN
+    RECEIVE_PROFILE
 } from '../actions';
 
 import InitialState from './InitialState';
 
 export const user = handleActions({
-    [HANDLE_LOGIN]: (state, action) => {
+    [RECEIVE_PROFILE]: (state, action) => {
         return Object.assign({}, state, action.payload);
     }
 }, InitialState.user);

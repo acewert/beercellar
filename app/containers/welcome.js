@@ -15,7 +15,7 @@ export default class WelcomeScene extends Component {
         } = this.props;
         return (
             <View style={ styles.container }>
-                <Text style={ styles.welcome }>
+                <Text style={ styles.heading }>
                     Welcome to Beer Cellar!
                 </Text>
                 <LoginButton navigator={ navigator } />
