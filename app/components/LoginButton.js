@@ -5,12 +5,16 @@ import {
 } from 'react-redux';
 
 import {
-    Text
+    Button
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
 
 import styles from '../styles';
+
+import {
+    RECEIVE_PROFILE
+} from '../constants';
 
 export class LoginButton extends Component {
 
@@ -21,7 +25,7 @@ export class LoginButton extends Component {
             user
         } = this.props;
         const text = this.getButtonText(user);
-        return (<Text style={ styles.login } onPress={ login }>{ text }</Text>);
+        return (<Button style={ styles.login } onPress={ login } title={ text } />);
     }
 
     getButtonText(user) {
@@ -53,7 +57,7 @@ export const mapDispatchToProps = (dispatch, props) => {
                 id: "1"
             };
             dispatch({
-                type: 'RECEIVE_PROFILE',
+                type: RECEIVE_PROFILE,
                 payload: user
             });
             Actions.Dashboard();
