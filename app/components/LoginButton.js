@@ -25,7 +25,12 @@ export class LoginButton extends Component {
             user
         } = this.props;
         const text = this.getButtonText(user);
-        return (<Button style={ styles.login } onPress={ login } title={ text } />);
+        return (
+            <Button // convert to NavButton, and make it use TouchableNativeFeedback https://facebook.github.io/react-native/docs/touchablenativefeedback.html
+                style={ styles.navButton }
+                onPress={ login }
+                title={ text } />
+        );
     }
 
     getButtonText(user) {

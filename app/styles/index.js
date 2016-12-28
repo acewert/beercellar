@@ -2,7 +2,7 @@ import {
         StyleSheet
 } from 'react-native';
 
-const colorTheme = {
+export const colorTheme = {
     darkBlue: '#003B73',
     mediumBlue: '',
     lightBlue: '#0084FF',
@@ -21,19 +21,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: colorTheme.darkBlue
     },
-    login: {
+    heading: {
+        fontSize: 40,
+        textAlign: 'center',
+        margin: 10,
+        color: colorTheme.white
+    },
+    navButton: {
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
         padding: 40,
         color: colorTheme.white,
         backgroundColor: colorTheme.lightBlue
-    },
-    heading: {
-        fontSize: 40,
-        textAlign: 'center',
-        margin: 10,
-        color: colorTheme.white
     }
 });
 
