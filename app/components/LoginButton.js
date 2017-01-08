@@ -12,6 +12,8 @@ import { Actions } from 'react-native-router-flux';
 
 import styles from '../styles';
 
+import api from '../api';
+
 import {
     RECEIVE_PROFILE,
     USER_ENDPOINTS
@@ -52,8 +54,7 @@ export const mapStateToProps = (state, props) => {
 export const mapDispatchToProps = (dispatch, props) => {
     return {
         login: () => {
-            fetch(USER_ENDPOINTS.SELF)
-                .then(response=>response.json())
+            api.users.login()
                 .then(response=> {
                     const {
                         user

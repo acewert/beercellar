@@ -19,4 +19,4 @@ export {
     LOGOUT,
     RECEIVE_PROFILE,
     ENDPOINTS as USER_ENDPOINTS
-} from './user';
+} from './users';
