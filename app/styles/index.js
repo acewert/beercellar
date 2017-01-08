@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colorTheme.darkBlue
+        backgroundColor: colorTheme.darkBlue,
+        paddingTop: 100
     },
     heading: {
         fontSize: 40,

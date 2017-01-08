@@ -5,10 +5,13 @@ import {
 } from 'react-redux';
 
 import {
-    ListView,
     Text,
     View
 } from 'react-native';
+
+import {
+    BeerList
+} from '../components';
 
 import styles from '../styles';
 
@@ -19,9 +22,7 @@ export class MyCellar extends Component {
             owned
         } = this.props;
 
-        const OwnedList = owned.length ? owned.map(beer => {
-            return <Text key={ beer.name }>{ `${beer.brewery} - ${beer.name}` }</Text>;
-        }) : <Text>Empty List</Text>
+        const OwnedList = owned.length ? <BeerList beers={owned} /> : <Text>Empty List</Text>
         return (
             <View style={ styles.container }>
                 <Text style={ styles.heading }>
