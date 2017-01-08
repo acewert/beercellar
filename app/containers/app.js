@@ -27,8 +27,8 @@ export default class App extends Component {
         <ReduxRouter>
             <Scene key="root">
                 <Scene key="WelcomeScene" component={WelcomeScene} title={WELCOME_TITLE} initial={true} />
-                <Scene key="Dashboard" component={Dashboard} title={DASHBOARD_TITLE} rightTitle="Edit" onRight={()=>console.warn('sadasd')} rightButtonImage={ {source: "https://placekitten.com/64/64"} }/>
-                <Scene key="MyCellar" component={MyCellar} title={MY_CELLAR_TITLE} />
+                <Scene key="Dashboard" component={Dashboard} title={DASHBOARD_TITLE} rightTitle="Edit" onRight={()=>console.warn('Edit Profile')} rightButtonImage={ {source: "https://placekitten.com/64/64"} } />
+                <Scene key="MyCellar" component={MyCellar} title={MY_CELLAR_TITLE}  rightTitle="Add" onRight={()=>console.warn('Add Beer')} rightButtonImage={ {source: "https://placekitten.com/64/64"} } />
                 <Scene key="ISO" component={InSearchOf} title={IN_SEARCH_OF_TITLE} />
             </Scene>
         </ReduxRouter>
