@@ -22,4 +22,8 @@ export default class WelcomeScene extends Component {
             </View>
         );
     }
+
+    static renderNavigationBar(props) {
+        return null;
+    }
 };

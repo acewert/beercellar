@@ -1,12 +1,11 @@
 export {
+    HOST
+} from './api';
+
+export {
     RECEIVE_ISO,
     RECEIVE_FT
 } from './beers';
-
-export {
-    LOGOUT,
-    RECEIVE_PROFILE
-} from './user';
 
 export {
     DASHBOARD_TITLE,
@@ -15,3 +14,9 @@ export {
     IN_SEARCH_OF_TITLE,
     WELCOME_TITLE
 } from './scenes';
+
+export {
+    LOGOUT,
+    RECEIVE_PROFILE,
+    ENDPOINTS as USER_ENDPOINTS
+} from './user';

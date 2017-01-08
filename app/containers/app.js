@@ -16,6 +16,7 @@ import {
 import WelcomeScene from './welcome';
 import Dashboard from './dashboard';
 import MyCellar from './MyCellar';
+import InSearchOf from './InSearchOf';
 
 const ReduxRouter = connect()(Router);
 
@@ -26,8 +27,9 @@ export default class App extends Component {
         <ReduxRouter>
             <Scene key="root">
                 <Scene key="WelcomeScene" component={WelcomeScene} title={WELCOME_TITLE} initial={true} />
-                <Scene key="Dashboard" component={Dashboard} title={DASHBOARD_TITLE} />
+                <Scene key="Dashboard" component={Dashboard} title={DASHBOARD_TITLE} rightTitle="Edit" onRight={()=>console.warn('sadasd')} rightButtonImage={ {source: "https://placekitten.com/64/64"} }/>
                 <Scene key="MyCellar" component={MyCellar} title={MY_CELLAR_TITLE} />
+                <Scene key="ISO" component={InSearchOf} title={IN_SEARCH_OF_TITLE} />
             </Scene>
         </ReduxRouter>
       </Provider>

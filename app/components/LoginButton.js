@@ -13,7 +13,8 @@ import { Actions } from 'react-native-router-flux';
 import styles from '../styles';
 
 import {
-    RECEIVE_PROFILE
+    RECEIVE_PROFILE,
+    USER_ENDPOINTS
 } from '../constants';
 
 export class LoginButton extends Component {
@@ -51,21 +52,19 @@ export const mapStateToProps = (state, props) => {
 export const mapDispatchToProps = (dispatch, props) => {
     return {
         login: () => {
-            const user = {
-                avatar: {
-                    large: "https://placekitten.com/640/640",
-                    medium: "https://placekitten.com/320/320",
-                    small: "https://placekitten.com/64/64"
-                },
-                displayName: "Stanley Parable",
-                email: "stanley@valve.com",
-                id: "1"
-            };
-            dispatch({
-                type: RECEIVE_PROFILE,
-                payload: user
-            });
-            Actions.Dashboard();
+            fetch(USER_ENDPOINTS.SELF)
+                .then(response=>response.json())
+                .then(response=> {
+                    const {
+                        user
+                    } = response;
+
+                    dispatch({
+                        type: RECEIVE_PROFILE,
+                        payload: user
+                    });
+                    Actions.Dashboard();
+                });
         }
     };
 };
