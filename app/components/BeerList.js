@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
 import {
-    connect
-} from 'react-redux';
+    ListView
+} from 'react-native';
 
 import {
-    ListView,
-    Text,
-    View
-} from 'react-native';
+    BeerListItem
+} from './BeerListItem';
 
 import styles from '../styles';
 
@@ -20,27 +18,27 @@ export class BeerList extends Component {
             beers
         } = props;
 
-        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        const ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
 
         this.dataSource = ds.cloneWithRows(beers);
     }
 
     render() {
         return (
-            <View style={ styles.container }>
-                <ListView dataSource={this.dataSource} renderRow={this.rowRenderer} />
-            </View>
-        );
+            <ListView
+                style={ styles.beerList.list }
+                dataSource={ this.dataSource }
+                renderRow={ this.rowRenderer } />
+        )
     }
 
     rowRenderer(beer) {
         return (
-            <View>
-                <Text>{ beer.brewery }</Text>
-                <Text>{ beer.name }</Text>
-            </View>
+            <BeerListItem beer={ beer } />
         );
     }
 };
 
-export default connect()(BeerList);
+export default BeerList;
