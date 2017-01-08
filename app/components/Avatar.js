@@ -12,7 +12,10 @@ export default class Avatar extends Component {
             source
         } = this.props;
         return (
-            <Image style={ styles.avatarMedium } source={ { uri: source } } />
+            <Image
+                style={ styles.avatars.medium }
+                source={ { uri: source } }
+            />
         );
     }
 };

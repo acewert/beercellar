@@ -6,11 +6,11 @@ import store from '../store'
 import { Router, Scene } from 'react-native-router-flux';
 
 import {
-    DASHBOARD_TITLE,
-    FOR_TRADE_TITLE,
-    MY_CELLAR_TITLE,
-    IN_SEARCH_OF_TITLE,
-    WELCOME_TITLE
+        DASHBOARD_TITLE,
+        FOR_TRADE_TITLE,
+        MY_CELLAR_TITLE,
+        IN_SEARCH_OF_TITLE,
+        WELCOME_TITLE
 } from '../constants';
 
 import WelcomeScene from './welcome';
@@ -21,18 +21,44 @@ import InSearchOf from './InSearchOf';
 const ReduxRouter = connect()(Router);
 
 export default class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <ReduxRouter>
-            <Scene key="root">
-                <Scene key="WelcomeScene" component={WelcomeScene} title={WELCOME_TITLE} initial={true} />
-                <Scene key="Dashboard" component={Dashboard} title={DASHBOARD_TITLE} rightTitle="Edit" onRight={()=>console.warn('Edit Profile')} rightButtonImage={ {source: "https://placekitten.com/64/64"} } />
-                <Scene key="MyCellar" component={MyCellar} title={MY_CELLAR_TITLE} rightTitle="Add" onRight={()=>console.warn('Add Beer to Cellar')} rightButtonImage={ {source: "https://placekitten.com/64/64"} } />
-                <Scene key="ISO" component={InSearchOf} title={IN_SEARCH_OF_TITLE} rightTitle="Add" onRight={()=>console.warn('Add Beer to ISO')} rightButtonImage={ {source: "https://placekitten.com/64/64"} } />
-            </Scene>
-        </ReduxRouter>
-      </Provider>
-    );
-  }
+    render() {
+        return (
+            <Provider store={ store }>
+                <ReduxRouter>
+                        <Scene key="root">
+                                <Scene
+                                    key="WelcomeScene"
+                                    component={ WelcomeScene }
+                                    title={ WELCOME_TITLE }
+                                    initial={ true }
+                                />
+                                <Scene
+                                    key="Dashboard"
+                                    component={ Dashboard }
+                                    title={ DASHBOARD_TITLE }
+                                    rightTitle="Edit"
+                                    onRight={ () => console.warn('Edit Profile') }
+                                    rightButtonImage={ {source: "https://placekitten.com/64/64"} }
+                                />
+                                <Scene
+                                    key="MyCellar"
+                                    component={ MyCellar }
+                                    title={ MY_CELLAR_TITLE }
+                                    rightTitle="Add"
+                                    onRight={ () => console.warn('Add Beer to Cellar') }
+                                    rightButtonImage={ {source: "https://placekitten.com/64/64"} }
+                                />
+                                <Scene
+                                    key="ISO"
+                                    component={ InSearchOf }
+                                    title={ IN_SEARCH_OF_TITLE }
+                                    rightTitle="Add"
+                                    onRight={ () => console.warn('Add Beer to ISO') }
+                                    rightButtonImage={ {source: "https://placekitten.com/64/64"} }
+                                />
+                        </Scene>
+                </ReduxRouter>
+            </Provider>
+        );
+    }
 };

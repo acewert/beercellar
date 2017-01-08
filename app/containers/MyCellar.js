@@ -22,12 +22,11 @@ export class MyCellar extends Component {
             owned
         } = this.props;
 
-        const OwnedList = owned.length ? <BeerList beers={owned} /> : <Text>Empty List</Text>
+        const OwnedList = owned.length
+            ? <BeerList beers={ owned } />
+            : <Text>Empty List</Text>;
         return (
-            <View style={ styles.container }>
-                <Text style={ styles.heading }>
-                    Your cellar!
-                </Text>
+            <View style={ styles.containers.containerWithNav }>
                 { OwnedList }
             </View>
         );

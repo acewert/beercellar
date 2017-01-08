@@ -24,13 +24,12 @@ export class LoginButton extends Component {
     render() {
         const {
             login,
-            navigator,
             user
         } = this.props;
         const text = this.getButtonText(user);
         return (
             <Button // convert to NavButton, and make it use TouchableNativeFeedback https://facebook.github.io/react-native/docs/touchablenativefeedback.html
-                style={ styles.navButton }
+                style={ styles.nav.button }
                 onPress={ login }
                 title={ text } />
         );
@@ -55,7 +54,7 @@ export const mapDispatchToProps = (dispatch, props) => {
     return {
         login: () => {
             api.users.login()
-                .then(response=> {
+                .then(response => {
                     const {
                         user
                     } = response;

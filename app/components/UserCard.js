@@ -17,9 +17,9 @@ export class UserCard extends Component {
             user
         } = this.props;
         return (
-            <View style={ styles.container }>
+            <View>
                 <Avatar source={ user.avatar.medium } />
-                <Text style={ styles.heading }>
+                <Text style={ styles.headings.heading }>
                     { user.displayName }
                 </Text>
             </View>

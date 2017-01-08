@@ -8,12 +8,9 @@ import styles from '../styles';
 
 export default class InSearchOf extends Component {
     render() {
-        const {
-            navigator
-        } = this.props;
         return (
-            <View style={ styles.container }>
-                <Text style={ styles.heading }>
+            <View style={ styles.containers.container }>
+                <Text style={ styles.headings.heading }>
                     ISO!
                 </Text>
             </View>

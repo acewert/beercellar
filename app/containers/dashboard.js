@@ -18,7 +18,6 @@ import {
     UserCard
 } from '../components';
 
-
 export class Dashboard extends Component {
     render() {
         const {
@@ -29,16 +28,16 @@ export class Dashboard extends Component {
         } = this.props;
 
         return (
-            <View style={ styles.container }>
+            <View style={ styles.containers.container }>
                 <UserCard user={ user } />
                 <Button
-                    style={ styles.navButton }
+                    style={ styles.nav.button }
                     title="My Cellar"
-                    onPress={goToMyCellar} />
+                    onPress={ goToMyCellar } />
                 <Button
-                    style={ styles.navButton }
+                    style={ styles.nav.button }
                     title="In Search Of"
-                    onPress={goToISO} />
+                    onPress={ goToISO } />
             </View>
         );
     }

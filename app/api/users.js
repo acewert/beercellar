@@ -4,6 +4,7 @@ import {
 
 export const users = {
     login: () => {
-        return fetch(USER_ENDPOINTS.SELF).then(response=>response.json())
+        return fetch(USER_ENDPOINTS.SELF)
+            .then(response => response.json())
     }
 }

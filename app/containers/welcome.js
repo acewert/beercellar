@@ -4,21 +4,20 @@ import {
         View
 } from 'react-native';
 
-import styles from '../styles';
+import {
+    styles
+} from '../styles';
 
 import LoginButton from '../components/LoginButton';
 
 export default class WelcomeScene extends Component {
     render() {
-        const {
-            navigator
-        } = this.props;
         return (
-            <View style={ styles.container }>
-                <Text style={ styles.heading }>
-                    Welcome to Beer Cellar!
+            <View style={ styles.containers.container }>
+                <Text style={ styles.headings.heading }>
+                    Welcome to Beer Cellar! 🍻
                 </Text>
-                <LoginButton navigator={ navigator } />
+                <LoginButton />
             </View>
         );
     }
