@@ -19,6 +19,10 @@ import {
     USER_ENDPOINTS
 } from '../constants';
 
+import {
+    asyncErrorHandler
+} from '../utils';
+
 export class LoginButton extends Component {
 
     render() {
@@ -64,7 +68,7 @@ export const mapDispatchToProps = (dispatch, props) => {
                         payload: user
                     });
                     Actions.Dashboard();
-                });
+                }).catch(asyncErrorHandler);
         }
     };
 };
